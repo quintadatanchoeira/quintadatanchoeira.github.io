@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à Tanchoeira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+
+    <header class="full-screen-header">
+        <img src="render_001.png" alt="Tanchoeira Render" class="header-image">
+    </header>
+    <main>
+        <!-- Primeira seção com imagem à esquerda e texto à direita -->
+
+        <section class="image-text-section" data-aos="fade-up">
+            <div class="image-container left">
+                <img src="render_002.png" alt="Tanchoeira Left" class="section-image">
+            </div>
+            <div class="text-container right">
+                <p>
+                    A Tanchoeira é uma marca de vinhos que celebra a tradição e a sustentabilidade. Os nossos vinhos são produzidos de forma artesanal, respeitando o meio ambiente. Estamos comprometidos em reduzir a nossa pegada de carbono, pois acreditamos na importância de cuidar do planeta para as gerações futuras.
+                </p>
+            </div>
+        </section>
+
+
+            <div class="image-container right">
+                <img src="render_003.png" alt="Tanchoeira Right" class="section-image">
+            </div>
+        </section>
+
+        <!-- Segunda seção com imagem à direita e texto à esquerda -->
+        <section class="image-text-section reverse" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-container left">
+                <p>
+                    Os nossos vinhos são o resultado de um processo dedicado, onde cada detalhe é cuidadosamente controlado para garantir a melhor qualidade.
+                    <br><br>
+                    A Tanchoeira é mais do que uma marca: é um compromisso com a autenticidade e a sustentabilidade.
+                </p>
+            </div>
+
+<!-- Empty space -->
+<section class="empty-space"></section>
+
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+        <a href="mailto:info@tanchoeira.com"><img src="mail.png" alt="Email"></a>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease',
+            once: true
+        });
+
+        // Logic for hiding header on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.full-screen-header');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 0) {
+                header.style.opacity = '0';
+                header.style.pointerEvents = 'none';
+            } else {
+                header.style.opacity = '1';
+                header.style.pointerEvents = 'all';
+            }
+        });
+    </script>
+</body>
+</html>
