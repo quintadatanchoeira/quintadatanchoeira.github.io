@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informação Nutricional</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .lang-selector { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="lang-selector">
+    <label for="language">Idioma:</label>
+    <select id="language" onchange="translatePage()">
+      <option value="pt">(PT) Português</option>
+      <option value="en">(EN) English</option>
+      <option value="fr">(FR) Français</option>
+      <option value="de">(DE) Deutsch</option>
+      <option value="es">(ES) Español</option>
+      <option value="pl">(PL) Polski</option>
+      <option value="el">(EL) Ελληνικά</option>
+      <option value="it">(IT) Italiano</option>
+      <option value="nl">(NL) Nederlands</option>
+    </select>
+  </div>
+
+  <h1>Tanchoeira Pet Nat Branco</h1>
+
+  <p><strong data-translate="volumeLabel"></strong>: <span>750 ml</span></p>
+  <p><strong data-translate="varietyLabel"></strong>: <span data-translate="varietyValue">Touriga Nacional</span></p>
+  <p><strong data-translate="harvestYearLabel"></strong>: <span>2023</span></p>
+  <p><strong data-translate="alcoholLabel"></strong>: <span data-translate="alcoholValue">12% vol</span></p>
+  <p><strong data-translate="acidityLabel"></strong>: <span data-translate="acidityValue">6,5 g/l</span></p>
+  <p><strong data-translate="countryLabel"></strong>: <span>Portugal</span></p>
+  <p><strong data-translate="regionLabel"></strong>: <span>Lisboa</span></p>
+
+  <h2 data-translate="nutritionTitle">Declaração nutricional</h2>
+  <table>
+    <tr>
+      <th></th>
+      <th data-translate="per100ml">por 100ml</th>
+    </tr>
+    <tr>
+      <td data-translate="energyLabel">Energia</td>
+      <td>307 kJ / 74 kcal</td>
+    </tr>
+    <tr>
+      <td data-translate="carbsLabel">Hidratos de Carbono</td>
+      <td>0,2 g</td>
+    </tr>
+    <tr>
+      <td data-translate="sugarLabel">· dos quais açúcares</td>
+      <td>0,2 g</td>
+    </tr>
+    <tr>
+      <td colspan="2" data-translate="negligible">Contém quantidades negligenciáveis de: Lípidos, dos quais saturados, Proteínas, Sal</td>
+    </tr>
+  </table>
+
+  <h2 data-translate="ingredientsTitle">Ingredientes</h2>
+  <p data-translate="ingredientsContent">Uvas*, Conservantes e antioxidantes: <strong>Sulfitos</strong><br/>* produção integrada</p>
+
+  <script>
+    const translations = {
+      pt: {
+        volumeLabel: "Quantidade",
+        varietyLabel: "Casta",
+        varietyValue: "Fernão Pires, Arinto, Outras",
+        harvestYearLabel: "Ano de colheita",
+        alcoholLabel: "Álcool",
+        alcoholValue: "12% vol",
+        acidityLabel: "Acidez",
+        acidityValue: "6,3 g/l",
+        countryLabel: "País",
+        regionLabel: "Região",
+        nutritionTitle: "Declaração nutricional",
+        per100ml: "por 100ml",
+        energyLabel: "Energia",
+        carbsLabel: "Hidratos de Carbono",
+        sugarLabel: "· dos quais açúcares",
+        negligible: "Contém quantidades negligenciáveis de: Lípidos, dos quais saturados, Proteínas, Sal",
+        ingredientsTitle: "Ingredientes",
+        ingredientsContent: "Uvas*, Conservantes e antioxidantes: <strong>Sulfitos</strong><br/>* produção integrada"
+      },
+      en: {
+        volumeLabel: "Volume",
+        varietyLabel: "Grape Variety",
+        varietyValue: "Fernão Pires, Arinto, Others",
+        harvestYearLabel: "Harvest Year",
+        alcoholLabel: "Alcohol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Acidity",
+        acidityValue: "6.3 g/l",
+        countryLabel: "Country",
+        regionLabel: "Region",
+        nutritionTitle: "Nutritional declaration",
+        per100ml: "per 100ml",
+        energyLabel: "Energy",
+        carbsLabel: "Carbohydrates",
+        sugarLabel: "· of which sugars",
+        negligible: "Contains negligible amounts of: Fat, of which saturated, Protein, Salt",
+        ingredientsTitle: "Ingredients",
+        ingredientsContent: "Grapes*, Preservatives and antioxidants: <strong>Sulphites</strong><br/>* integrated production"
+      },
+      fr: {
+        volumeLabel: "Quantité",
+        varietyLabel: "Cépage",
+        varietyValue: "Fernão Pires, Arinto, Autres",
+        harvestYearLabel: "Année de récolte",
+        alcoholLabel: "Alcool",
+        alcoholValue: "12% vol",
+        acidityLabel: "Acidité",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Pays",
+        regionLabel: "Région",
+        nutritionTitle: "Déclaration nutritionnelle",
+        per100ml: "pour 100ml",
+        energyLabel: "Énergie",
+        carbsLabel: "Glucides",
+        sugarLabel: "· dont sucres",
+        negligible: "Contient des quantités négligeables de : Lipides, dont saturés, Protéines, Sel",
+        ingredientsTitle: "Ingrédients",
+        ingredientsContent: "Raisins*, Conservateurs et antioxydants : <strong>Sulfites</strong><br/>* production intégrée"
+      },
+      de: {
+        volumeLabel: "Menge",
+        varietyLabel: "Rebsorte",
+        varietyValue: "Fernão Pires, Arinto, Andere",
+        harvestYearLabel: "Erntejahr",
+        alcoholLabel: "Alkohol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Säure",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Land",
+        regionLabel: "Region",
+        nutritionTitle: "Nährwertdeklaration",
+        per100ml: "pro 100ml",
+        energyLabel: "Energie",
+        carbsLabel: "Kohlenhydrate",
+        sugarLabel: "· davon Zucker",
+        negligible: "Enthält vernachlässigbare Mengen von: Fett, davon gesättigte, Eiweiß, Salz",
+        ingredientsTitle: "Zutaten",
+        ingredientsContent: "Trauben*, Konservierungs- und Antioxidationsmittel: <strong>Sulphite</strong><br/>* integrierte Produktion"
+      },
+      es: {
+        volumeLabel: "Cantidad",
+        varietyLabel: "Variedad de uva",
+        varietyValue: "Fernão Pires, Arinto, Otras",
+        harvestYearLabel: "Año de cosecha",
+        alcoholLabel: "Alcohol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Acidez",
+        acidityValue: "6,3 g/l",
+        countryLabel: "País",
+        regionLabel: "Región",
+        nutritionTitle: "Declaración nutricional",
+        per100ml: "por 100ml",
+        energyLabel: "Energía",
+        carbsLabel: "Hidratos de carbono",
+        sugarLabel: "· de los cuales azúcares",
+        negligible: "Contiene cantidades insignificantes de: Grasas, de las cuales saturadas, Proteínas, Sal",
+        ingredientsTitle: "Ingredientes",
+        ingredientsContent: "Uvas*, Conservantes y antioxidantes: <strong>Sulfitos</strong><br/>* producción integrada"
+      },
+      pl: {
+        volumeLabel: "Objętość",
+        varietyLabel: "Odmiana winogron",
+        varietyValue: "Fernão Pires, Arinto, Inne",
+        harvestYearLabel: "Rok zbiorów",
+        alcoholLabel: "Alkohol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Kwasowość",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Kraj",
+        regionLabel: "Region",
+        nutritionTitle: "Deklaracja żywieniowa",
+        per100ml: "na 100ml",
+        energyLabel: "Energia",
+        carbsLabel: "Węglowodany",
+        sugarLabel: "· w tym cukry",
+        negligible: "Zawiera znikome ilości: Tłuszczów, w tym nasyconych, Białka, Soli",
+        ingredientsTitle: "Składniki",
+        ingredientsContent: "Winogrona*, Konserwanty i przeciwutleniacze: <strong>Sulfity</strong><br/>* produkcja zintegrowana"
+      },
+      el: {
+        volumeLabel: "Ποσότητα",
+        varietyLabel: "Ποικιλία σταφυλιών",
+        varietyValue: "Fernão Pires, Arinto, Άλλες",
+        harvestYearLabel: "Έτος συγκομιδής",
+        alcoholLabel: "Αλκοόλ",
+        alcoholValue: "12% vol",
+        acidityLabel: "Οξύτητα",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Χώρα",
+        regionLabel: "Περιοχή",
+        nutritionTitle: "Διατροφική δήλωση",
+        per100ml: "ανά 100ml",
+        energyLabel: "Ενέργεια",
+        carbsLabel: "Υδατάνθρακες",
+        sugarLabel: "· εκ των οποίων σάκχαρα",
+        negligible: "Περιέχει αμελητέες ποσότητες: Λιπαρά, εκ των οποίων κορεσμένα, Πρωτεΐνες, Αλάτι",
+        ingredientsTitle: "Συστατικά",
+        ingredientsContent: "Σταφύλια*, Συντηρητικά και αντιοξειδωτικά: <strong>Θειώδη</strong><br/>* ολοκληρωμένη παραγωγή"
+      },
+      it: {
+        volumeLabel: "Quantità",
+        varietyLabel: "Vitigno",
+        varietyValue: "Fernão Pires, Arinto, Altre",
+        harvestYearLabel: "Anno di raccolta",
+        alcoholLabel: "Alcol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Acidità",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Paese",
+        regionLabel: "Regione",
+        nutritionTitle: "Dichiarazione nutrizionale",
+        per100ml: "per 100ml",
+        energyLabel: "Energia",
+        carbsLabel: "Carboidrati",
+        sugarLabel: "· di cui zuccheri",
+        negligible: "Contiene quantità trascurabili di: Grassi, di cui saturi, Proteine, Sale",
+        ingredientsTitle: "Ingredienti",
+        ingredientsContent: "Uve*, Conservanti e antiossidanti: <strong>Solfiti</strong><br/>* produzione integrata"
+      },
+      nl: {
+        volumeLabel: "Hoeveelheid",
+        varietyLabel: "Druivensoort",
+        varietyValue: "Fernão Pires, Arinto, Andere",
+        harvestYearLabel: "Oogstjaar",
+        alcoholLabel: "Alcohol",
+        alcoholValue: "12% vol",
+        acidityLabel: "Zuurtegraad",
+        acidityValue: "6,3 g/l",
+        countryLabel: "Land",
+        regionLabel: "Regio",
+        nutritionTitle: "Voedingsverklaring",
+        per100ml: "per 100ml",
+        energyLabel: "Energie",
+        carbsLabel: "Koolhydraten",
+        sugarLabel: "· waarvan suikers",
+        negligible: "Bevat verwaarloosbare hoeveelheden: Vetten, waarvan verzadigd, Eiwitten, Zout",
+        ingredientsTitle: "Ingrediënten",
+        ingredientsContent: "Druiven*, Conserveermiddelen en antioxidanten: <strong>Sulfieten</strong><br/>* geïntegreerde productie"
+      }
+    };
+
+    function translatePage() {
+      const lang = document.getElementById("language").value;
+      const strings = translations[lang];
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (strings[key]) {
+          el.innerHTML = strings[key];
+        }
+      });
+    }
+
+    window.onload = translatePage;
+  </script>
+</body>
+</html>
+
